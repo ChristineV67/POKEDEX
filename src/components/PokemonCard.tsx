@@ -1,9 +1,5 @@
 
-
-
 function PokemonCard({pokemon}){
-
-  
 
 
   
