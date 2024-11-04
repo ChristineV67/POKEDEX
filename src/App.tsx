@@ -2,46 +2,41 @@ import {useState } from "react";
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
 import data from "./assets/data/pokemon.json"
+import type { pokemonType } from "./lib/definition";
 
+  
+  
 function App() {
 
+const pokemonList : pokemonType[] = data;
 
-	
-	const [pokemonIndex, setPokemonIndex] =useState(0);
-	const pokemonList = data;
+const [pokemonIndex, setPokemonIndex] = useState(0);
 
+const handleClick =()=> {
 
-	
-	// bouton précédent
+	if (pokemonIndex < (pokemonList.length-1)) setPokemonIndex (pokemonIndex +1 ) 
+	PokemonCard.name}
 
-	const handlePreviousClick =()=> {
-
-		if (pokemonIndex > 0) setPokemonIndex (pokemonIndex -1 ) }
-
-
-	// bouton suivant
-
-	const handleNextClick =()=> {
-
-	 if (pokemonIndex < (pokemonList.length-1)) setPokemonIndex (pokemonIndex +1 ) }
-
-	
 
 return (
 
-	<>
-		<div>
-		<PokemonCard pokemon={data[pokemonIndex]} />
+
+	<div>
+
+{pokemonList.map(article => <PokemonCard article ={article} key={article.id}/> )}
+
+		<nav> 
+		    
 		
-		< button onClick={ handlePreviousClick}>Précédent</button>
-  
- 		 < button onClick={handleNextClick}>Suivant</button>
+			<button onClick={handleClick}>  </button>
+		
+		  </nav>	
+		 
+    
+</div>
 
+);
 
-
-		</div>
-	</>
-	);
 }
 
-export default App; 
+export default App;

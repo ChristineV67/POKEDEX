@@ -1,5 +1,7 @@
+import type { pokemonType } from "../lib/definition";
 
-function PokemonCard({pokemon}){
+
+function PokemonCard(pokemon : pokemonType){
 
 
   
@@ -15,7 +17,7 @@ function PokemonCard({pokemon}){
           <p>???</p>
         )}
 
-        <figcaption>{ pokemon.name}</figcaption>
+<figcaption>{ pokemon.name}</figcaption>
 
       </figure>
     );
