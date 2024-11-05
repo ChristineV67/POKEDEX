@@ -4,3 +4,9 @@ export type pokemonType = {
     imgSrc?:string;
     
 };
+
+export type NavBarType= {
+    pokemonIndex: number;
+    setPokemonIndex: (index: number) => void;
+    pokemonList: pokemonType[];
+  }
